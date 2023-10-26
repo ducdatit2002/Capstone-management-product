@@ -2,7 +2,7 @@ Bảng phân công task:
 - giao diện trang bán hàng: Đức Đạt
 - giao diện trang admin: Đức Đạt
 
-Do anh kia em có nhắn tin ảnh phân công làm capstone nhưng ảnh bận ảnh nhắn là "có gì nhờ bạn xử lý giúp nhé", nên em tự làm  capstone ạ. 													
+Do anh kia em có nhắn tin nhưng ảnh bận ảnh nhắn là "có gì nhờ bạn xử lý giúp nhé", nên em tự làm  capstone ạ. 													
 																									
 																									
 																									
