@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #AEDEFC, #F875AA);
+  height: 100vh;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn_page {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn_admin,
+.btn_customer {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  background-color: #AEDEFC;
+  color: #fff;
+  line-height: 1.8em;
+}
+
+.btn_admin:hover,
+.btn_customer:hover {
+  cursor: pointer;
+  background-color: #F875AA;
+  color: #fff;
+}
+
+.btn_admin:hover a,
+.btn_customer:hover a {
+  color: #AEDEFC;
+}
+
+.sp-thongbao {
+  color: #DA0C81;
+  margin-left: 2px;
+  display: none;
+}
+
+.wrapper {
+  padding-top: 40px;
+}
+
+#content {
+  width: 100%;
+  /* background: #74ebd5; */
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #BEADFA, #CDFAD5);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,30 @@
+.btn_page {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn_admin,
+.btn_customer {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    background-color: $color-1-blue;
+    color: #fff;
+    line-height: 1.8em;
+}
+
+.btn_admin:hover,
+.btn_customer:hover {
+    cursor: pointer;
+    background-color: $color-1-purple;
+    color: $color-1-white;
+}
+
+.btn_admin:hover a,
+.btn_customer:hover a {
+    color: $color-1-blue;
+}
+

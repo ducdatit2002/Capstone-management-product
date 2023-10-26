@@ -1,0 +1,19 @@
+.sp-thongbao {
+    color: $color-sp-thongbao;
+    margin-left: 2px;
+    display: none;
+}
+
+.wrapper {
+    padding-top: 40px;
+}
+
+#content {
+    width: 100%;
+    /* background: #74ebd5; */
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, $color-1-content, $color-2-content);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, $color-1-content, $color-2-content);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

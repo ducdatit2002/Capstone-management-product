@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Quản lý sản phẩm</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <!-- <link rel="stylesheet" href="./../../assets/css/style.css"> -->
+  <link rel="stylesheet" href="../../assets/main.css">
+  
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand" href="./../../index.html">Home</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="./../../customer/views/index.html">Customer<span class="sr-only">(current)</span></a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="./../../customer/views/index.html">Customer</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownId">
+            <button class="dropdown-item" onclick=samsungFilter()>Samsung</button>
+            <button class="dropdown-item" onclick=iphoneFilter()>Iphone</button>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Wrapper -->
+  <div class="wrapper">
+    <!-- Page Content Holder -->
+    <div id="content">
+      <div class="container-fluid" id="list_academy">
+        <div class="card text-center">
+
+          <!-- Header -->
+          <div class="card-header myCardHeader">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="text-left text-primary font-weight-bold">Danh Sách Quản Lý Sản Phẩm </h3>
+              </div>
+              <div class="col-md-6 text-right">
+                <button class="btn btn-primary btnThem" id="btnThem" data-toggle="modal" data-target="#myModal"><i
+                    class="fa fa-plus mr-1"></i>Thêm
+                  Sản Phẩm</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="card-body">
+            <div class="row mb-3">
+              <div class="col">
+                <div class="input-group">
+                  <input type="text" value="" class="form-control" placeholder="Tìm sản phẩm theo tên" id="searchName">
+                  <div class="input-group-prepend">
+                    <button type="" class="btn" id="btnTimSP">
+                      <span class="input-group-text">
+                        <i class="fa fa-search"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table class="table table-bordered table-hover table-responsive">
+              <thead class="text-primary">
+                <tr>
+                  <th>STT</th>
+                  <th>Tên Sản Phẩm</th>
+                  <th>Giá
+                    <button class="btn btn-outline-danger" id="btnSapXep">
+                      <i class="fa fa-arrow-up" id="SapXepTang" style="display: block;"></i>
+                      <i class="fa fa-arrow-down" id="SapXepGiam" style="display: none;"></i>
+                    </button>
+                  </th>
+                  <th>Màn hình</th>
+                  <th>Camera sau</th>
+                  <th>Camera trước</th>
+                  <th>Hình ảnh</th>
+                  <th>Miêu tả</th>
+                  <th>Dòng sản phẩm</th>
+                  <th><em class="fa fa-cog"></em></th>
+                </tr>
+              </thead>
+              <tbody id="tblDanhSachSP">
+
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Footer -->
+          <div class="card-footer myCardFooter">
+            <nav>
+              <ul class="pagination justify-content-center" id="ulPhanTrang">
+
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Tên Sản Phẩm</label>
+            <input id="name_product" class="form-control" placeholder="Nhập vào tên sản phẩm" />
+            <span class="sp-thongbao text-danger" id="tbName"></span>
+          </div>
+          <div class="form-group">
+            <label>Giá</label>
+            <input id="price_product" class="form-control" placeholder="Nhập vào giá sản phẩm" />
+            <span class="sp-thongbao text-danger" id="tbPrice"></span>
+          </div>
+          <div class="form-group">
+            <label>Màn hình</label>
+            <input id="screen_product" class="form-control" placeholder="Nhập vào màn hình sản phẩm" />
+            <span class="sp-thongbao text-danger" id="tbScreen"></span>
+          </div>
+          <div class="form-group">
+            <label>Camera sau</label>
+            <input id="backCamera_product" class="form-control" placeholder="Nhập vào thông tin camera sau" />
+            <span class="sp-thongbao text-danger" id="tbBackCamera"></span>
+          </div>
+          <div class="form-group">
+            <label>Camera trước</label>
+            <input id="frontCamera_product" class="form-control" placeholder="Nhập vào thông tin camera trước" />
+            <span class="sp-thongbao text-danger" id="tbFrontCamera"></span>
+          </div>
+          <div class="form-group">
+            <label>Hình ảnh</label>
+            <input id="img_product" class="form-control" placeholder="Nhập vào hình sản phẩm" />
+            <span class="sp-thongbao text-danger" id="tbImg"></span>
+          </div>
+          <div class="form-group">
+            <label>Mô tả</label>
+            <input id="desc_product" class="form-control" placeholder="Nhập vào mô tả sản phẩm" />
+            <span class="sp-thongbao text-danger" id="tbDesc"></span>
+          </div>
+          <div class="form-group">
+            <label for="">Loại sản phẩm: </label>
+            <select class="form-control" id="type_product">
+              <option value="">Chọn loại sản phẩm</option>
+              <option value="iPhone">iPhone</option>
+              <option value="Samsung">Samsung</option>
+            </select>
+            <span class="sp-thongbao text-danger" id="tbType"></span>
+          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!--  -->
+  <script src="../services/productAPI.js"></script>
+
+  <!-- Main JS -->
+  <script type="module" src="../controllers/main.js"></script>
+</body>
+
+</html>
